@@ -17,6 +17,47 @@ namespace RaRat_server
         private SQLiteDataAdapter DB;
         private DataSet DS = new DataSet();
         private DataTable DT = new DataTable();
+
+        public static string convertDataTableToString(DataTable dataTable)
+        {
+            string data = string.Empty;
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                DataRow row = dataTable.Rows[i];
+                for (int j = 0; j < dataTable.Columns.Count; j++)
+                {
+                    data += dataTable.Columns[j].ColumnName + ":" + row[j];
+                    if (j == dataTable.Columns.Count - 1)
+                    {
+                        if (i != (dataTable.Rows.Count - 1))
+                            data += "$";
+                    }
+                    else
+                        data += "/";
+                }
+            }
+            return data;
+        }
+
+        private void SetConnection() {
+            sql_con = new SQLiteConnection("Data Source=database.db;version=3;New=False;Compress=True;");
+        }
+
+        private void LoadData() {
+            SetConnection();
+            sql_con.Open();
+            sql_cmd = sql_con.CreateCommand();
+            String CommandText = "select client_id, client_ip from client_table";
+            DB = new SQLiteDataAdapter(CommandText, sql_con);
+            DS.Reset();
+            DB.Fill(DS);
+            DT = DS.Tables[0];
+            sql_con.Close();
+            string res = convertDataTableToString(DT);
+            richTextBox1.Text = res;
+
+        }
+
         public ra_main()
 
         { 
@@ -41,6 +82,11 @@ namespace RaRat_server
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }
