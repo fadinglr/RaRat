@@ -1,0 +1,2 @@
+D:\projects\RaRat\RaRat_client\Debug\RaRat_client.exe
+D:\projects\RaRat\RaRat_client\Debug\RaRat_client.pdb
