@@ -11,9 +11,15 @@ namespace RaRat_server
 {
     public partial class ra_main : Form
     {
+
         public ra_main()
-        {
+
+        { 
+            int server_listen_port =3030 ;
+            int client_listen_port =3020 ;
+
             InitializeComponent();
+            richTextBox1.Text = " Welcome to RaRat v0.1 \n\r ====================";
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
