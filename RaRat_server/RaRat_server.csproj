@@ -43,25 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="ra_main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ra_main.Designer.cs">
       <DependentUpon>ra_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ra_cmd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ra_cmd.Designer.cs">
-      <DependentUpon>ra_cmd.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ra_main.resx">
       <DependentUpon>ra_main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ra_cmd.resx">
-      <DependentUpon>ra_cmd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

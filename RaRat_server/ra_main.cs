@@ -16,17 +16,57 @@ namespace RaRat_server
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void button_list_processes_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_client_info_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_screenshot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_file_transfer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_keylogger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_encrypt_files_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_show_message_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_webcam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_create_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_run_Click(object sender, EventArgs e)
         {
 
         }

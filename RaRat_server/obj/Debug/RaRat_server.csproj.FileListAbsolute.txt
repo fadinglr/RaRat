@@ -8,3 +8,12 @@ C:\Users\Hosney\Documents\GitHub\RaRat\RaRat_server\obj\Debug\RaRat_server.exe
 C:\Users\Hosney\Documents\GitHub\RaRat\RaRat_server\obj\Debug\RaRat_server.pdb
 C:\Users\Hosney\Documents\GitHub\RaRat\RaRat_server\obj\Debug\RaRat_server.ra_main.resources
 C:\Users\Hosney\Documents\GitHub\RaRat\RaRat_server\obj\Debug\RaRat_server.ra_cmd.resources
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.csprojAssemblyReference.cache
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.exe
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.pdb
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\bin\Debug\RaRat_server.exe
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\bin\Debug\RaRat_server.pdb
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.ra_main.resources
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.Properties.Resources.resources
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.csproj.GenerateResource.cache
+C:\Users\Hosam\source\repos\RaRat\RaRat_server\obj\Debug\RaRat_server.csproj.CoreCompileInputs.cache
