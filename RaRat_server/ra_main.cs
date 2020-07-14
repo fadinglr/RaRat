@@ -6,15 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace RaRat_server
 {
     public partial class ra_main : Form
     {
-
+        private SQLiteConnection sql_con;
+        private SQLiteCommand sql_cmd;
+        private SQLiteDataAdapter DB;
+        private DataSet DS = new DataSet();
+        private DataTable DT = new DataTable();
         public ra_main()
 
         { 
+        
             int server_listen_port =3030 ;
             int client_listen_port =3020 ;
 
