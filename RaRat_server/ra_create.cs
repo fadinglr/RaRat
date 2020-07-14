@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace RaRat_server
 {
-    public partial class ra_cmd : Form
+    public partial class ra_create : Form
     {
-        public ra_cmd()
+        public ra_create()
         {
             InitializeComponent();
         }
