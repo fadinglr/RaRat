@@ -16,6 +16,9 @@ namespace RaRat_server
             InitializeComponent();
         }
 
-        
+        private void button_create_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

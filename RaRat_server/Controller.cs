@@ -7,6 +7,5 @@ namespace RaRat_server
 {
     class Controller
     {
-
     }
 }
