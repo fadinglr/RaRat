@@ -96,7 +96,7 @@ namespace RaRat_server
             int client_listen_port =3020 ;
 
             InitializeComponent();
-            richTextBox1.Text = " Welcome to RaRat v0.1 \n\r ====================";
+            richTextBox_results.Text = " Welcome to RaRat v0.1 \n\r ====================";
             int number_clients = HowManyClients();
 
             for (int i = 0; i < number_clients; i++)
@@ -107,21 +107,61 @@ namespace RaRat_server
                 string array_client_mc = LoadData()[1];
                 string[] client_mc = array_client_mc.Split('$');
                 string[] clientsmc = client_mc[i].Split(':');
-                comboBox1.Items.AddRange(new object[] { clients[1]+" \'"+clientsmc[1] + "\'" });
+                comboBox_client_list.Items.AddRange(new object[] { clients[1]+" \'"+clientsmc[1] + "\'" });
             }
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void button_list_processes_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_client_info_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_screenshot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_file_transfer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_keylogger_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_encrypt_files_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_show_message_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_webcam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_create_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_run_Click(object sender, EventArgs e)
         {
 
         }
@@ -135,7 +175,7 @@ namespace RaRat_server
                 string array_client_ips = LoadData()[0];
                 string[] client_ips = array_client_ips.Split('$');
                 string[] clients = client_ips[i].Split(':');
-                richTextBox1.Text = richTextBox1.Text +"\n\r" +clients[1];
+                richTextBox_results.Text = richTextBox_results.Text +"\n\r" +clients[1];
 
             }
 
@@ -152,6 +192,56 @@ namespace RaRat_server
         private void button10_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button_list_processes_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_client_info_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_screenshot_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_file_transfer_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_keylogging_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_encrypt_file_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_show_message_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_webcam_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_exit_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_run_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

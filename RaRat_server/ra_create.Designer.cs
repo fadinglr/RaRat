@@ -29,43 +29,44 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ra_create));
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button_create = new System.Windows.Forms.Button();
+            this.textBox_server = new System.Windows.Forms.TextBox();
+            this.textBox_port = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // button_create
             // 
-            this.button1.Location = new System.Drawing.Point(187, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_create.Location = new System.Drawing.Point(187, 81);
+            this.button_create.Name = "button_create";
+            this.button_create.Size = new System.Drawing.Size(138, 35);
+            this.button_create.TabIndex = 2;
+            this.button_create.Text = "Create";
+            this.button_create.UseVisualStyleBackColor = true;
+            this.button_create.Click += new System.EventHandler(this.button_create_Click);
             // 
-            // textBox1
+            // textBox_server
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 22);
-            this.textBox1.TabIndex = 3;
+            this.textBox_server.Location = new System.Drawing.Point(98, 12);
+            this.textBox_server.Name = "textBox_server";
+            this.textBox_server.Size = new System.Drawing.Size(227, 20);
+            this.textBox_server.TabIndex = 3;
             // 
-            // textBox2
+            // textBox_port
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(61, 22);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "8080";
+            this.textBox_port.Location = new System.Drawing.Point(98, 40);
+            this.textBox_port.Name = "textBox_port";
+            this.textBox_port.Size = new System.Drawing.Size(61, 20);
+            this.textBox_port.TabIndex = 4;
+            this.textBox_port.Text = "8080";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Server IP";
             // 
@@ -74,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Server Port";
             // 
@@ -83,9 +84,9 @@
             this.ClientSize = new System.Drawing.Size(342, 131);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox_port);
+            this.Controls.Add(this.textBox_server);
+            this.Controls.Add(this.button_create);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -99,9 +100,9 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button_create;
+        private System.Windows.Forms.TextBox textBox_server;
+        private System.Windows.Forms.TextBox textBox_port;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
