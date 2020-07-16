@@ -7,6 +7,19 @@
 #include <ctime>
 #include <stdio.h>
 
+using namespace std;
+
+string convertToString(char* a, int size)
+{
+    int i;
+    string s = "";
+    for (i = 0; i < size; i++) {
+        s = s + a[i];
+    }
+    return s;
+}
+
+
 void CapruteScreenAndSaveToFile()
 {
     
@@ -43,9 +56,28 @@ void CapruteScreenAndSaveToFile()
     free(buffer);
 }
 
+string RunCommand(string ra_cmd) {
+    
+    char   psBuffer[128];
+    FILE* pPipe;
+    string output;
+    string temp;
+    output = "";
+
+    if ((pPipe = _popen("dir", "rt")) == NULL)
+        exit(1);
+    while (fgets(psBuffer, 128, pPipe)) {
+        output = output +  convertToString(psBuffer,128);
+        printf(psBuffer);
+    }
+    return output;
+}
+
 
 int main()
 {
     
+
+    RunCommand("dir") ;
     return 0;
 }
