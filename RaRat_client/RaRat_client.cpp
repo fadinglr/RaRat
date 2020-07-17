@@ -137,9 +137,7 @@ void ra_encryptFile(string filename, string key) {
 
 int main(int argc, char** argv)
 {   
-    MessageBox.Show("Some text", "Some title",MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //HideConsole();
-    //ra_RunCommand("dir") ;
+    
     system("PAUSE");
     return 0;
 }
