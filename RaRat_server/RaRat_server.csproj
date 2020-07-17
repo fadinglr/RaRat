@@ -58,19 +58,10 @@
     <Compile Include="ra_main.Designer.cs">
       <DependentUpon>ra_main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ra_create.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ra_create.Designer.cs">
-      <DependentUpon>ra_create.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ra_main.resx">
       <DependentUpon>ra_main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ra_create.resx">
-      <DependentUpon>ra_create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

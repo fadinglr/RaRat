@@ -17,7 +17,6 @@ D:\projects\RaRat\RaRat_server\bin\Debug\System.Data.SQLite.xml
 D:\projects\RaRat\RaRat_server\bin\Debug\System.Data.SQLite.dll.config
 D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.csprojAssemblyReference.cache
 D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.ra_main.resources
-D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.ra_create.resources
 D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.Properties.Resources.resources
 D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.csproj.GenerateResource.cache
 D:\projects\RaRat\RaRat_server\obj\Debug\RaRat_server.csproj.CoreCompileInputs.cache

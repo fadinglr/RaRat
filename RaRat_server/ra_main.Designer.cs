@@ -68,6 +68,7 @@
             this.richTextBox_results.Size = new System.Drawing.Size(721, 293);
             this.richTextBox_results.TabIndex = 0;
             this.richTextBox_results.Text = "";
+            this.richTextBox_results.TextChanged += new System.EventHandler(this.richTextBox_results_TextChanged);
             // 
             // textBox_command
             // 

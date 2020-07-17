@@ -96,7 +96,9 @@ namespace RaRat_server
             int client_listen_port =3020 ;
 
             InitializeComponent();
-            richTextBox_results.Text = " Welcome to RaRat v0.1 \n\r ====================";
+            richTextBox_results.Text = "RARat Version 0.1 (2020)";
+
+
             int number_clients = HowManyClients();
 
             for (int i = 0; i < number_clients; i++)
@@ -255,6 +257,11 @@ namespace RaRat_server
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox_results_TextChanged(object sender, EventArgs e)
         {
 
         }
