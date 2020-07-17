@@ -6,6 +6,8 @@
 #include <sstream>
 #include <ctime>
 #include <stdio.h>
+#include "base64.cpp"
+
 
 using namespace std;
 
@@ -137,7 +139,7 @@ void ra_encryptFile(string filename, string key) {
 
 int main(int argc, char** argv)
 {   
-    
+    cout<< base64_encode("HELLO") << endl;
     system("PAUSE");
     return 0;
 }

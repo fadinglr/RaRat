@@ -1,4 +1,2 @@
 ﻿  RaRat_client.cpp
-D:\projects\RaRat\RaRat_client\RaRat_client.cpp(140,20): error C2228: left of '.Show' must have class/struct/union
-D:\projects\RaRat\RaRat_client\RaRat_client.cpp(141,9): error C2065: 'MessageBoxButtons': undeclared identifier
-D:\projects\RaRat\RaRat_client\RaRat_client.cpp(141,31): error C2065: 'MessageBoxIcon': undeclared identifier
+  RaRat_client.vcxproj -> D:\projects\RaRat\RaRat_client\Debug\RaRat_client.exe

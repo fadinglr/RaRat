@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="RaRat_client.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base64.cpp" />
+    <ClInclude Include="base64.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
