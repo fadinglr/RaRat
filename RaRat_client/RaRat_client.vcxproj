@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="base64.cpp" />
     <ClInclude Include="base64.h" />
+    <ClInclude Include="httplib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

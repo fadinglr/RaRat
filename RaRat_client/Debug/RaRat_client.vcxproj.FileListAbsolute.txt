@@ -2,3 +2,5 @@ D:\projects\RaRat\RaRat_client\Debug\RaRat_client.exe
 C:\Users\Hosam\source\repos\RaRat\RaRat_client\Debug\RaRat_client.exe
 C:\Users\Hosam\source\repos\RaRat\RaRat_client\Debug\RaRat_client.pdb
 D:\projects\RaRat\RaRat_client\Debug\RaRat_client.pdb
+C:\Users\Hosney\source\repos\RaRat\RaRat_client\Debug\RaRat_client.exe
+C:\Users\Hosney\source\repos\RaRat\RaRat_client\Debug\RaRat_client.pdb

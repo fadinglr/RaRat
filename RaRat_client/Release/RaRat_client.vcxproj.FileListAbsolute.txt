@@ -1,1 +1,2 @@
 D:\projects\RaRat\RaRat_client\Release\RaRat_client.exe
+C:\Users\Hosney\source\repos\RaRat\RaRat_client\Release\RaRat_client.exe
