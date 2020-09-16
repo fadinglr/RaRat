@@ -2,9 +2,6 @@
 
 > Note : The Software is under construction!
 
-[![N|Solid](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Re-Horakhty.svg/1200px-Re-Horakhty.svg.png)]
-
-
 Remote administration tool that can be used for Red teaming
 The Command and control server is written in C# and the agent is written in C++
 
